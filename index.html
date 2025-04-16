@@ -1,91 +1,151 @@
-<!DOCTYPE html>
+CTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zachary Heathcock</title>
-  <style>
+	<head>
+		  <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
+		      <title>Zachary Heathcock</title>
+		        <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f9;
-      color: #2c3e50;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
-      margin: 0;
-    }
+	          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		        background-color: #f4f4f9;
+			      color: #2c3e50;
+			            display: flex;
+				          flex-direction: column;
+					        align-items: center;
+						      padding: 60px 20px;
+						            margin: 0;
+							        }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.3em;
-    }
+        .menu-button {
+		      position: absolute;
+		            top: 20px;
+			          left: 20px;
+				        background: none;
+					      border: none;
+					            font-size: 1.5em;
+						          cursor: pointer;
+							        z-index: 1000;
+								    }
 
-    h2 {
-      font-size: 2em;
-      font-weight: 500;
-      margin-bottom: 0.2em;
-    }
+	    .menu-content {
+		          display: none;
+			        position: absolute;
+				      top: 60px;
+				            left: 20px;
+					          background-color: white;
+						        border: 1px solid #ccc;
+							      border-radius: 8px;
+							            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+								          padding: 10px;
+									        z-index: 999;
+										    }
 
-    p {
-      font-size: 1.2em;
-      margin: 0.3em 0;
-      max-width: 600px;
-      text-align: center;
-      color: #555;
-    }
+	        .menu-content a {
+			      display: block;
+			            color: #2c3e50;
+				          text-decoration: none;
+					        padding: 8px 12px;
+						      border-radius: 4px;
+						          }
 
-    .button {
-      margin-top: 20px;
-      display: inline-block;
-      background-color: #1abc9c;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-    }
+		    .menu-content a:hover {
+			          background-color: #f0f0f0;
+				      }
 
-    .button:hover {
-      background-color: #16a085;
-    }
+		        h1 {
+				      font-size: 3em;
+				            margin-bottom: 0.3em;
+					        }
 
-    .section {
-      margin-top: 40px;
-      text-align: center;
-    }
+			    h2 {
+				          font-size: 2em;
+					        font-weight: 500;
+						      margin-bottom: 0.2em;
+						          }
 
-    .link-button {
-      background: none;
-      border: none;
-      color: #2980b9;
-      font-size: 1em;
-      cursor: pointer;
-      text-decoration: underline;
-      padding: 0;
-    }
+			        p {
+					      font-size: 1.2em;
+					            margin: 0.3em 0;
+						          max-width: 600px;
+							        text-align: center;
+								      color: #555;
+								          }
 
-    .link-button:hover {
-      color: #1c5d8d;
-    }
-  </style>
-</head>
-<body>
-  <h1>Welcome</h1>
-  <h2>Zachary Heathcock</h2>
-  <p>Senior Computer Engineering student at the University of Memphis</p>
-  <p>Engineering Intern with 
-    <button class="link-button" onclick="window.location.href='https://peakplus.energy/'">Peak+</button>
-  </p>
+				    .button {
+					          margin-top: 20px;
+						        display: inline-block;
+							      background-color: #1abc9c;
+							            color: white;
+								          padding: 10px 20px;
+									        border: none;
+										      border-radius: 5px;
+										            text-decoration: none;
+											          font-size: 1em;
+												        transition: background-color 0.3s ease;
+													    }
 
-  <a class="button" href="contact.html">Contact Me</a>
+				        .button:hover {
+						      background-color: #16a085;
+						          }
 
-  <div class="section">
-    <h2>About Me</h2>
-	<p>Hi, my name is Zachary Heathcock. I am student at the university of Memphis, but graduate in less than a month. I currently work for Peak+ as a general engineering intern but will finish that internship in the next upcoming months. With Peak+ I have helped the team with system design, proposal generation, relay design, and many other tasks in excel, including automation with VBA. I am interested in microchip technologies, hardware engineering, embedded systems, PCB Design, design engineering, and many other EECE sectors. I am looking for work in the Chicago, New York City, and Memphis metropolitan areas, but am open to remote work as well as work anywhere else. I enjoy software debugging and creation, but like multifaceted work that is both hardware and software. You can find my projects on the menu in the top left or by clicking HERE. </p>
-  </div>
-</body>
+					    .section {
+						          margin-top: 40px;
+							        text-align: center;
+								    }
+
+					        .link-button {
+							      background: none;
+							            border: none;
+								          color: #2980b9;
+									        font-size: 1em;
+										      cursor: pointer;
+										            text-decoration: underline;
+											          padding: 0;
+												      }
+
+						    .link-button:hover {
+							          color: #1c5d8d;
+								      }
+						      </style>
+	</head>
+	<body>
+		  <button class="menu-button" onclick="toggleMenu()">☰</button>
+		    <div class="menu-content" id="menu">
+			        <a href="index.html">Home</a>
+				    <a href="projects.html">Projects</a>
+				        <a href="about.html">About Me</a>
+					    <a href="contact.html">Contact</a>
+					      </div>
+
+					        <h1>Welcome</h1>
+						  <h2>Zachary Heathcock</h2>
+						    <p>Senior Computer Engineering student at the University of Memphis</p>
+						      <p>Engineering Intern with 
+						          <button class="link-button" onclick="window.location.href='https://peakplus.energy/'">Peak+</button>
+							    </p>
+
+							      <a class="button" href="contact.html">Contact Me</a>
+
+							        <div class="section">
+									    <h2>About Me</h2>
+									        <p>Hi, my name is Zachary Heathcock. I am student at the university of Memphis, but graduate in less than a month. I currently work for Peak+ as a general engineering intern but will finish that internship in the next upcoming months. With Peak+ I have helped the team with system design, proposal generation, relay design, and many other tasks in excel, including automation with VBA. I am interested in microchip technologies, hardware engineering, embedded systems, PCB Design, design engineering, and many other EECE sectors. I am looking for work in the Chicago, New York City, and Memphis metropolitan areas, but am open to remote work as well as work anywhere else. I enjoy software debugging and creation, but like multifaceted work that is both hardware and software. You can find my projects on the menu in the top left or by clicking <a href="projects.html">here</a>.</p>
+										  </div>
+
+										    <script>
+											        function toggleMenu() {
+																								          const menu = document.getElementById('menu');
+																								          menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+																								        }
+
+											        document.addEventListener('click', function(event) {
+																								          const menu = document.getElementById('menu');
+																								          const button = document.querySelector('.menu-button');
+																								          if (!menu.contains(event.target) && !button.contains(event.target)) {
+																																					              menu.style.display = 'none';
+																																					            }
+																								        });
+											      </script>
+	</body>
 </html>
+
 
