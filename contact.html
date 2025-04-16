@@ -1,155 +1,154 @@
-CTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		  <meta charset="UTF-8" />
-		    <meta name="viewport" content="width=device-width, initial-scale=1" />
-		      <title>Contact Me - Zachary Heathcock</title>
-		        <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Me - Zachary Heathcock</title>
+  <style>
     body {
-	          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		        background-color: #f4f4f9;
-			      color: #2c3e50;
-			            display: flex;
-				          flex-direction: column;
-					        align-items: center;
-						      padding: 60px 20px;
-						            margin: 0;
-							        }
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #2c3e50;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      margin: 0;
+    }
 
-        .menu-button {
-		      position: absolute;
-		            top: 20px;
-			          left: 20px;
-				        background: none;
-					      border: none;
-					            font-size: 1.5em;
-						          cursor: pointer;
-							        z-index: 1000;
-								    }
+    .menu-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      z-index: 1000;
+    }
 
-	    .menu-content {
-		          display: none;
-			        position: absolute;
-				      top: 60px;
-				            left: 20px;
-					          background-color: white;
-						        border: 1px solid #ccc;
-							      border-radius: 8px;
-							            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-								          padding: 10px;
-									        z-index: 999;
-										    }
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 10px;
+      z-index: 999;
+    }
 
-	        .menu-content a {
-			      display: block;
-			            color: #2c3e50;
-				          text-decoration: none;
-					        padding: 8px 12px;
-						      border-radius: 4px;
-						          }
+    .menu-content a {
+      display: block;
+      color: #2c3e50;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
 
-		    .menu-content a:hover {
-			          background-color: #f0f0f0;
-				      }
+    .menu-content a:hover {
+      background-color: #f0f0f0;
+    }
 
-		        h1 {
-				      font-size: 2.5em;
-				            margin-bottom: 0.5em;
-					        }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
 
-			    form {
-				          background: white;
-					        padding: 30px;
-						      border-radius: 8px;
-						            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-							          width: 100%;
-								        max-width: 500px;
-									    }
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
 
-			        label {
-					      display: block;
-					            margin-top: 15px;
-						          font-weight: bold;
-							      }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
 
-				    input,
-				        textarea {
-						      width: 100%;
-						            padding: 10px;
-							          margin-top: 5px;
-								        border: 1px solid #ccc;
-									      border-radius: 5px;
-									            font-size: 1em;
-										        }
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
 
-					    button {
-						          margin-top: 20px;
-							        background-color: #1abc9c;
-								      color: white;
-								            padding: 12px 20px;
-									          border: none;
-										        border-radius: 5px;
-											      font-size: 1em;
-											            cursor: pointer;
-												        }
+    button {
+      margin-top: 20px;
+      background-color: #1abc9c;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
 
-					        button:hover {
-							      background-color: #16a085;
-							          }
+    button:hover {
+      background-color: #16a085;
+    }
 
-						    .back-link {
-							          margin-top: 30px;
-								        text-decoration: none;
-									      color: #2980b9;
-									            font-size: 1em;
-										        }
+    .back-link {
+      margin-top: 30px;
+      text-decoration: none;
+      color: #2980b9;
+      font-size: 1em;
+    }
 
-						        .back-link:hover {
-								      color: #1c5d8d;
-								          }
-							  </style>
-	</head>
-	<body>
-		  <button class="menu-button" onclick="toggleMenu()">☰</button>
-		    <div class="menu-content" id="menu">
-			        <a href="index.html">Home</a>
-				    <a href="projects.html">Projects</a>
-				        <a href="about.html">About Me</a>
-					    <a href="contact.html">Contact</a>
-					      </div>
+    .back-link:hover {
+      color: #1c5d8d;
+    }
+  </style>
+</head>
+<body>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <div class="menu-content" id="menu">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About Me</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-					        <h1>Contact Me</h1>
+  <h1>Contact Me</h1>
 
-						  <form action="#" method="post">
-							      <label for="name">Your Name</label>
-							          <input type="text" id="name" name="name" required />
+  <form action="#" method="post">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required />
 
-								      <label for="email">Your Email</label>
-								          <input type="email" id="email" name="email" required />
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" required />
 
-									      <label for="message">Your Message</label>
-									          <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-										      <button type="submit">Send Message</button>
-										        </form>
+    <button type="submit">Send Message</button>
+  </form>
 
-											  <a class="back-link" href="index.html">← Back to Home</a>
+  <a class="back-link" href="index.html">← Back to Home</a>
 
-											    <script>
-												        function toggleMenu() {
-																										          const menu = document.getElementById('menu');
-																										          menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-																										        }
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
 
-												        document.addEventListener('click', function(event) {
-																										          const menu = document.getElementById('menu');
-																										          const button = document.querySelector('.menu-button');
-																										          if (!menu.contains(event.target) && !button.contains(event.target)) {
-																																								              menu.style.display = 'none';
-																																								            }
-																										        });
-												      </script>
-	</body>
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      const button = document.querySelector('.menu-button');
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+</body>
 </html>
-
 
