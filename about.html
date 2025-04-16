@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Zachary Heathcock</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #2c3e50;
+      margin: 0;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 10px;
+      z-index: 999;
+    }
+
+    .menu-content a {
+      display: block;
+      color: #2c3e50;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    .menu-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .about-image {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .bio-text {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #2980b9;
+      margin: 0 15px;
+      font-size: 1.2em;
+    }
+
+    .social-links a:hover {
+      color: #1c5d8d;
+    }
+  </style>
+</head>
+<body>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <div class="menu-content" id="menu">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About Me</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <h1>About Me</h1>
+
+  <div class="about-container">
+    <img class="about-image" src="images/zachary.jpg" alt="Zachary Heathcock" />
+    <p class="bio-text">
+      Hi! I'm Zachary Heathcock, a Senior Computer Engineering student at the University of Memphis. I am passionate about embedded systems, hardware design, and the intersection of hardware and software. Over the years, I've gained experience in system design, PCB design, microchip technologies, and programming. Currently, I am working as an engineering intern at Peak+, where I help with system design, proposal generation, and automation using VBA.
+    </p>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/zacharyheathcock" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="mailto:zachary@example.com">Email</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      const button = document.querySelector('.menu-button');
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
+
