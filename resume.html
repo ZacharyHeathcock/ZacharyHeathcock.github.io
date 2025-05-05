@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Me - Zachary Heathcock</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume - Zachary Heathcock</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f4f9;
       color: #2c3e50;
+      margin: 0;
+      padding: 60px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 60px 20px;
-      margin: 0;
     }
 
     .menu-button {
@@ -57,56 +57,27 @@
       margin-bottom: 0.5em;
     }
 
-    form {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    iframe {
       width: 100%;
-      max-width: 500px;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-
-    .submit-button {
-      margin-top: 20px;
-      background-color: #1abc9c;
-      color: black;
-      padding: 12px 20px;
+      max-width: 900px;
+      height: 1200px;
       border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    .submit-button:hover {
-      background-color: #16a085;
-    }
-
-    .back-link {
       margin-top: 30px;
-      text-decoration: none;
-      color: #2980b9;
-      font-size: 1em;
     }
 
-    .back-link:hover {
-      color: #1c5d8d;
+    @media screen and (max-width: 768px) {
+      iframe {
+        height: 80vh;
+      }
     }
+
+    html, body, iframe {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -115,26 +86,14 @@
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="about.html">About Me</a>
-    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
   </div>
 
-  <h1>Contact Me</h1>
+  <h1>Zachary Heathcock's Resume</h1>
 
-  <form action="#" method="post">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" name="name" required />
-
-    <label for="email">Your Email</label>
-    <input type="email" id="email" name="email" required />
-
-    <label for="message">Your Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit" class="submit-button">Send Message</button>
-  </form>
-
-  <a class="back-link" href="index.html">← Back to Home</a>
-
+  <!-- Embedded Resume PDF -->
+  <iframe src="resume.pdf" frameborder="0">
+</iframe>
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
@@ -151,4 +110,3 @@
   </script>
 </body>
 </html>
-

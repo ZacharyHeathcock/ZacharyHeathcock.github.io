@@ -15,7 +15,6 @@
       flex-direction: column;
       align-items: center;
     }
-
     .menu-button {
       position: absolute;
       top: 20px;
@@ -26,7 +25,6 @@
       cursor: pointer;
       z-index: 1000;
     }
-
     .menu-content {
       display: none;
       position: absolute;
@@ -39,7 +37,6 @@
       padding: 10px;
       z-index: 999;
     }
-
     .menu-content a {
       display: block;
       color: #2c3e50;
@@ -47,25 +44,14 @@
       padding: 8px 12px;
       border-radius: 4px;
     }
-
     .menu-content a:hover {
       background-color: #f0f0f0;
     }
-
     h1 {
       font-size: 2.5em;
       margin-bottom: 1em;
       text-align: center;
     }
-
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      width: 100%;
-      max-width: 1000px;
-    }
-
     .project-card {
       background: white;
       border-radius: 10px;
@@ -73,39 +59,45 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      min-width: 280px;
     }
 
+.project-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
     .project-card img {
       width: 100%;
-      height: 200px;
+      height: 450px;
       object-fit: cover;
     }
-
     .project-content {
       padding: 20px;
       flex-grow: 1;
     }
-
     .project-title {
       font-size: 1.3em;
       margin-bottom: 10px;
       font-weight: bold;
     }
-
     .project-description {
       font-size: 1em;
       color: #555;
       margin-bottom: 15px;
     }
-
     .project-link {
       text-decoration: none;
       color: #1abc9c;
       font-weight: bold;
     }
-
     .project-link:hover {
       color: #16a085;
+    }
+    .more-text {
+      display: none;
     }
   </style>
 </head>
@@ -115,25 +107,48 @@
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="about.html">About Me</a>
-    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
   </div>
 
   <h1>My Projects</h1>
 
   <div class="projects-container">
-    <!-- Example project -->
+    <!-- Project 1 -->
     <div class="project-card">
       <img src="images/project1.jpg" alt="Project 1">
       <div class="project-content">
         <div class="project-title">Battery Energy Storage System</div>
         <div class="project-description">
-          A demo battery energy system built with a Raspberry Pi and bidirectional buck-boost converter, designed for energy flow control with real-time data.
+          A battery energy system built with a Raspberry Pi and bidirectional buck-boost converter, designed for energy flow control with real-time data.
+          <span class="dots"></span>
+          <span class="more-text">
+            <br>This project was designed for fulfillment of my senior design class for the University of Memphis engineering program. It was developed with 3 other Electrical Engineering students and one dual Electrical and Computer student.
+            This project utilized a Raspberry PI running a custom python script that utilized Particle Swarm Optimization. The PI receives information from the source, load, and battery, and used this information to change the duty cycle of the buck-boost.
+            These changes would change the relationship of Vin and Vout therefore increasing or decreasing the energy flowing into the battery or out of the battery.
+          </span>
+          <br><button class="read-more-btn">Read more</button>
         </div>
-        <a class="project-link" href="https://github.com/yourusername/bess-project" target="_blank">View Code</a>
+        <a class="project-link" href="https://github.com/ZacharyHeathcock/bess-project" target="_blank">View Code</a>
       </div>
     </div>
 
-    <!-- Add more project cards below -->
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="images/project2.jpg" alt="Project 2">
+      <div class="project-content">
+        <div class="project-title">Autonomous Robot Design for Nuclear Waste​ Handling and Storage​</div>
+        <div class="project-description">
+          This project was a prototype design project for the Mechatronics class at the University of Memphis.
+          <span class="dots"></span>
+          <span class="more-text">
+            <br>The proposed solution includes radiation shielding space for all critical electronics. It also allows for standard decontamination spraying, due to the computational compartment, which is air tight to prevent radioactive particle infiltration.
+            The sensory equipment is radiation resistant, and all critical equipment has space to include additional radiation shielding if required. The system is able to operate without human intervention, due to the binocular camera array. Low level radiation would allow for the LiDAR sensor to be used, increasing terrain following capabilities. This could be used before the waste is collected to train the system on the routes it will use.
+            The system is capable of handling waste barrels and spherical objects, and also storing them due to the manipulation arm and storage cart.
+          </span>
+          <br><button class="read-more-btn">Read more</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -142,14 +157,35 @@
       menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
     }
 
-    document.addEventListener('click', function(event) {
-      const menu = document.getElementById('menu');
-      const button = document.querySelector('.menu-button');
-      if (!menu.contains(event.target) && !button.contains(event.target)) {
-        menu.style.display = 'none';
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      // Attach Read More toggles
+      document.querySelectorAll('.read-more-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const desc = button.closest('.project-description');
+          const dots = desc.querySelector('.dots');
+          const more = desc.querySelector('.more-text');
+
+          if (more.style.display === 'inline') {
+            more.style.display = 'none';
+            dots.style.display = 'inline';
+            button.textContent = 'Read more';
+          } else {
+            more.style.display = 'inline';
+            dots.style.display = 'none';
+            button.textContent = 'Read less';
+          }
+        });
+      });
+
+      // Hide menu when clicking outside
+      document.addEventListener('click', function (event) {
+        const menu = document.getElementById('menu');
+        const button = document.querySelector('.menu-button');
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+          menu.style.display = 'none';
+        }
+      });
     });
   </script>
 </body>
 </html>
-
