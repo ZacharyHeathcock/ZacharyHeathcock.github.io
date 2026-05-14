@@ -3,558 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Professional Portfolio for Zachary Heathcock, EIT">
+  <meta name="description" content="Professional Portfolio of Zachary Heathcock, EIT – Computer Engineer specializing in embedded systems and hardware design">
   <title>Zachary Heathcock | Professional Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: linear-gradient(145deg, #fef7e8 0%, #fff3e4 100%);
-      font-family: system-ui, -apple-system, 'Segoe UI', 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
-      color: #1e2a3e;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    /* custom scroll & focus */
-    ::selection {
-      background: #ffcfa2;
-      color: #1e2a3e;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.5rem 1.8rem;
-    }
-
-    /* section spacing */
-    section {
-      margin-bottom: 4rem;
-      scroll-margin-top: 2rem;
-    }
-
-    section:last-of-type {
-      margin-bottom: 2rem;
-    }
-
-    /* headings with energetic accent */
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #2D6A4F, #E76F51);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-
-    h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      border-left: 6px solid #F4A261;
-      padding-left: 1rem;
-      margin-bottom: 2rem;
-      color: #2b3b4c;
-      letter-spacing: -0.3px;
-    }
-
-    h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #264653;
-      margin-bottom: 0.5rem;
-    }
-
-    /* intro paragraph */
-    .intro-text {
-      font-size: 1.2rem;
-      margin: 1rem 0 1.2rem 0;
-      color: #2c3e44;
-      max-width: 85%;
-    }
-
-    .linkedin-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: #2c6e9e;
-      color: white;
-      padding: 0.7rem 1.6rem;
-      border-radius: 60px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.25s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      margin-top: 0.25rem;
-    }
-
-    .linkedin-btn:hover {
-      background-color: #1f5175;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
-    }
-
-    /* resume spot = card style */
-    .resume-card {
-      background: white;
-      border-radius: 32px;
-      padding: 1.8rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.08);
-      border: 1px solid #ffe2c6;
-      transition: all 0.2s;
-    }
-
-    .resume-info {
-      flex: 2;
-    }
-
-    .resume-info p {
-      margin-top: 0.6rem;
-      color: #3a5468;
-    }
-
-    .skill-badge {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
-
-    .skill-badge span {
-      background: #f7e1c3;
-      padding: 0.3rem 1rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #b6602e;
-    }
-
-    .resume-action {
-      flex-shrink: 0;
-    }
-
-    .btn-resume {
-      background: #E76F51;
-      color: white;
-      border: none;
-      padding: 0.85rem 2rem;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 44px;
-      cursor: pointer;
-      transition: 0.2s;
-      text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 6px 14px rgba(231, 111, 81, 0.3);
-    }
-
-    .btn-resume:hover {
-      background: #d15a3c;
-      transform: scale(1.02);
-      box-shadow: 0 12px 20px rgba(231, 111, 81, 0.4);
-    }
-
-    /* Experience grid */
-    .exp-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .exp-item {
-      background: white;
-      border-radius: 28px;
-      padding: 1.5rem 2rem;
-      transition: 0.2s;
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.03);
-      border: 1px solid #fae0c0;
-    }
-
-    .exp-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.8rem;
-    }
-
-    .exp-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #e76f51;
-    }
-
-    .exp-date {
-      font-size: 0.9rem;
-      background: #fff0e2;
-      padding: 0.2rem 0.8rem;
-      border-radius: 30px;
-      font-weight: 500;
-    }
-
-    .exp-company {
-      font-weight: 600;
-      color: #4f6f8f;
-      margin-bottom: 0.8rem;
-    }
-
-    .exp-desc {
-      color: #2c3e50;
-      margin-top: 0.5rem;
-      padding-left: 0.2rem;
-    }
-
-    /* Projects grid (mobile friendly) */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 28px;
-      padding: 1.5rem;
-      transition: all 0.25s;
-      border: 1px solid #ffe1bd;
-      box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.05);
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: #f4b678;
-      box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.12);
-    }
-
-    .project-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #2f6b4a;
-      margin-bottom: 0.6rem;
-    }
-
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1rem 0 0.8rem 0;
-    }
-
-    .project-tech span {
-      background: #f1e3d4;
-      padding: 0.2rem 0.7rem;
-      border-radius: 40px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #a5572c;
-    }
-
-    .project-desc {
-      color: #2c4b5c;
-      margin-bottom: 1.2rem;
-    }
-
-    .project-link {
-      text-decoration: none;
-      font-weight: 600;
-      color: #e76f51;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: gap 0.2s;
-    }
-
-    .project-link:hover {
-      gap: 10px;
-      color: #b85032;
-    }
-
-    /* contact section */
-    .contact-container {
-      background: #ffffffd9;
-      backdrop-filter: blur(0px);
-      border-radius: 2rem;
-      padding: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-      border: 1px solid #ffdbb5;
-    }
-
-    .contact-info {
-      flex: 1;
-    }
-
-    .contact-info p {
-      margin: 0.8rem 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.05rem;
-    }
-
-    .contact-icon {
-      font-size: 1.3rem;
-      min-width: 28px;
-    }
-
-    .contact-link {
-      color: #2d6a4f;
-      font-weight: 500;
-      text-decoration: none;
-      border-bottom: 2px dotted #f4a261;
-    }
-
-    .contact-link:hover {
-      color: #e76f51;
-      border-bottom-style: solid;
-    }
-
-    .contact-note {
-      flex: 1;
-      background: #fef3e8;
-      border-radius: 1.5rem;
-      padding: 1rem 1.6rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .contact-note p {
-      font-weight: 500;
-    }
-
-    hr {
-      margin: 2rem 0 1rem;
-      border: none;
-      height: 2px;
-      background: linear-gradient(90deg, #ffe0b5, #f9bc7c, #ffe0b5);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #7f6b58;
-      margin-top: 2rem;
-    }
-
-    /* mobile fine-tuning */
-    @media (max-width: 780px) {
-      .container {
-        padding: 1rem 1.3rem;
-      }
-      h1 {
-        font-size: 2.5rem;
-      }
-      .intro-text {
-        max-width: 100%;
-        font-size: 1rem;
-      }
-      .resume-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5rem;
-      }
-      .resume-action {
-        align-self: stretch;
-        text-align: center;
-      }
-      .exp-header {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .contact-container {
-        flex-direction: column;
-      }
-      h2 {
-        font-size: 1.7rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      .btn-resume {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    /* bright but not aggressive touches */
-    .highlight {
-      background: linear-gradient(120deg, #ffe6ce 0%, #ffe6ce 40%, transparent 60%);
-      padding: 0 0.2rem;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
 
   <!-- 1. Name section -->
   <section>
-    <h1>Riley Chen</h1>
-    <div style="height: 4px; width: 70px; background: #F4A261; border-radius: 4px; margin-top: 6px;"></div>
+    <h1>Zachary Heathcock, EIT</h1>
+    <div class="accent-line"></div>
   </section>
 
-  <!-- 2. Intro + LinkedIn (explicit flow) -->
+  <!-- 2. Intro + LinkedIn -->
   <section>
     <div class="intro-text">
-      <strong>Intro</strong> — Intro paragraph
+      <strong>Computer Engineer</strong> with experience in embedded Linux, controller commissioning, and PCB design. 
+      Passionate about robust hardware-software integration and building automation systems. 
+      EIT certified (NCEES TN FE Exam, 2025).
     </div>
     <a href="https://linkedin.com/in/zacharyheathcock" target="_blank" rel="noopener noreferrer" class="linkedin-btn">
       Connect on LinkedIn
     </a>
   </section>
 
-  <!-- 3. Spot for Resume (distinct section) -->
+  <!-- 3. Resume spot -->
   <section>
-    <h2>Resume</h2>
+    <h2>Resume Highlights</h2>
     <div class="resume-card">
       <div class="resume-info">
-        <h3 style="margin-bottom: 0.2rem;">Zachary Heathcock</h3>
-        <p>Short professional description</p>
+        <h3>Zachary Heathcock, EIT</h3>
+        <p>Embedded Systems Engineer with 2+ years of industry experience at Peak+, skilled in Modbus/BACnet, VBA automation, and hardware design. Looking for full‑time opportunities in semiconductors, embedded systems, or hardware engineering.</p>
         <div class="skill-badge">
-          <span>React</span>
-          <span>Vue</span>
-          <span>Python</span>
-          <span>UI/UX</span>
-          <span>GraphQL</span>
-          <span>Tailwind</span>
+          <span>Embedded Linux</span>
+          <span>Modbus/BACnet</span>
+          <span>VBA / Python</span>
+          <span>PCB Design (KiCad/Orcad)</span>
+          <span>MATLAB/Simulink</span>
+          <span>Oscilloscope</span>
+          <span>Git</span>
+          <span>Bash Scripting</span>
         </div>
       </div>
       <div class="resume-action">
-        <!-- placeholder download button — replace # with actual resume pdf path for GitHub Pages -->
-        <a href="#" class="btn-resume" id="resumeDummyBtn">📎 Download PDF (resume)</a>
+        <a href="https://raw.githubusercontent.com/ZacharyHeathcock/ZacharyHeathcock.github.io/main/Zachary%20Heathcock%20Current.pdf" class="btn-resume" id="resumeDummyBtn" download>📄 Download PDF Resume</a>
       </div>
     </div>
   </section>
 
   <!-- 4. Experience section -->
   <section>
-    <h2>Experience</h2>
+    <h2>Professional Experience</h2>
     <div class="exp-grid">
       <div class="exp-item">
         <div class="exp-header">
           <span class="exp-title">Embedded Systems Engineer</span>
-          <span class="exp-date">May 2025 - May 2026</span>
+          <span class="exp-date">May 2025 – May 2026</span>
         </div>
-        <div class="exp-company">Peak+, Memphis, TN</div>
+        <div class="exp-company">Peak+ · Memphis, TN</div>
         <div class="exp-desc">
-         Description of work at Peak+ as embedded systems engineer
+          <ul>
+            <li>Led onboarding and commissioning for 180 controllers across 50 sites, serving as primary engineer for all new system deployments.</li>
+            <li>Rolled out improved Modbus/BACnet protocol support to 8 high priority sites, enabling direct Ethernet data readout by third-party building automation systems and eliminating intermediary hardware.</li>
+            <li>Partnered with database engineer to streamline commissioning data pipelines, cutting controller onboarding time by 18% and reducing manual data handoffs.</li>
+            <li>Co-authored internal documentation standardizing controller onboarding and commissioning process for consistent, repeatable deployments.</li>
+          </ul>
         </div>
       </div>
       <div class="exp-item">
         <div class="exp-header">
           <span class="exp-title">Electrical Engineering Intern</span>
-          <span class="exp-date">Jun 2024 - May 2025</span>
+          <span class="exp-date">June 2024 – May 2025</span>
         </div>
-        <div class="exp-company">Peak+, Memphis, TN</div>
+        <div class="exp-company">Peak+ · Memphis, TN</div>
         <div class="exp-desc">
-          Description of work at Peak+ as electrical Engineering Intern
+          <ul>
+            <li>Utilized embedded Linux (Debian) to increase IoT connectivity between system controllers and sensors.</li>
+            <li>Developed and expanded VBA automations to replace manual production documentation, reducing turnaround time by 44% and eliminating recurring data entry errors.</li>
+            <li>Collaborated with sales representatives to design technically sound system configurations within site‑specific constraints, ensuring feasibility and cost‑effectiveness during quoting.</li>
+            <li>Indexed site performance across 50 sites to identify issues and showcase performance per customer requests.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. Projects section -->
+  <!-- 5. Education section (added for completeness) -->
   <section>
-    <h2>Projects</h2>
+    <h2>Education</h2>
+    <div class="exp-grid">
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">University of Memphis</span>
+          <span class="exp-date">August 2021 – May 2025</span>
+        </div>
+        <div class="exp-company">Bachelor of Science, Computer Engineering · GPA: 3.79</div>
+        <div class="exp-desc">
+          <strong>Relevant coursework:</strong> Computer Organization & Architecture, Discrete Structures, Digital Circuit Design, Intro to Microprocessors.<br>
+          <strong>Certification:</strong> Electrical Engineer in Training (EIT), NCEES TN FE Exam 2025.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Projects section -->
+  <section>
+    <h2>Engineering Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <div class="project-title">UrbanCart</div>
-        <div class="project-tech"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
-        <div class="project-desc">Eco-friendly grocery delivery platform with real-time inventory and carbon footprint tracker. 
-          Streamlined checkout and role-based admin panel.</div>
-        <a href="#" class="project-link">Live demo → <span style="font-size:0.9rem;">↗</span></a>
+        <div class="project-title">Variable Gain Signal Conditioner PCB</div>
+        <div class="project-tech"><span>Orcad PCB</span><span>Gerber</span><span>Signal Conditioning</span></div>
+        <div class="project-desc">
+          Designed gerber files for a variable gain signal conditioner using Orcad PCB. Analyzed mockup performance, iterated routing and placement to minimize board size and optimize signal behavior.
+        </div>
+        <a href="#" class="project-link">View project →</a>
       </div>
       <div class="project-card">
-        <div class="project-title">Aether UI</div>
-        <div class="project-tech"><span>Vue3</span><span>Tailwind</span><span>Storybook</span></div>
-        <div class="project-desc">Open-source component library with dark mode, theming, and accessibility baked in. Used by 200+ 
-          developers in side projects and small startups.</div>
-        <a href="#" class="project-link">GitHub → <span style="font-size:0.9rem;">↗</span></a>
+        <div class="project-title">Intelligent Bi‑Directional Energy Controller</div>
+        <div class="project-tech"><span>Particle Swarm Opt.</span><span>Renewables</span><span>Embedded C</span></div>
+        <div class="project-desc">
+          University research project to optimize energy flow between renewable sources and battery storage. Led a team of 4 through weekly sprints; applied particle swarm optimization to reduce switching transient noise by 7%, resulting in cleaner output power.
+        </div>
+        <a href="#" class="project-link">Learn more →</a>
       </div>
     </div>
   </section>
 
-  <!-- 6. Contact Section -->
+  <!-- 7. Contact Section -->
   <section>
     <h2>Contact</h2>
     <div class="contact-container">
       <div class="contact-info">
-        <p><span class="contact-icon">Mail</span> <a href="mailto:hello@rileychen.dev" class="contact-link">zachary.heathcock@gmail.com</a></p>
-        <p><span class="contact-icon">Github</span> <a href="#" class="contact-link">github.com/ZacharyHeathcock</a></p>
-        <p><span class="contact-icon">Contact</span> <a href="#" class="contact-link">Placeholder</a></p>
-        <p><span class="contact-icon">Location</span>Memphis, TN | Open to anywhere</p>
+        <p><span class="contact-icon">✉️</span> <a href="mailto:zacharyheathcock@gmail.com" class="contact-link">zacharyheathcock@gmail.com</a></p>
+        <p><span class="contact-icon">🐙</span> <a href="https://github.com/ZacharyHeathcock" class="contact-link" target="_blank">github.com/ZacharyHeathcock</a></p>
+        <p><span class="contact-icon">🔗</span> <a href="https://linkedin.com/in/zacharyheathcock" class="contact-link" target="_blank">linkedin.com/in/zacharyheathcock</a></p>
+        <p><span class="contact-icon">📍</span> Memphis, TN · Open to relocation</p>
       </div>
       <div class="contact-note">
-        <p>Open for employment</p>
-        <p style="font-size: 0.85rem; margin-top: 8px;">Let's connect for work in Semiconductors and related field</p>
+        <p>Seeking full‑time opportunities in semiconductors, embedded systems, or hardware engineering.</p>
+        <p style="font-size: 0.85rem; margin-top: 8px;">Let’s connect and build the next generation of intelligent systems.</p>
       </div>
     </div>
   </section>
 
   <hr />
   <footer>
-    Zachary Heathcock • 2026
+    © 2026 Zachary Heathcock, EIT — Built for GitHub Pages
   </footer>
 </div>
 
 <script>
-  // Small interactive reminder for resume download placeholder (user can replace link)
+  // Resume download confirmation (optional, but friendly)
   const resumeBtn = document.getElementById('resumeDummyBtn');
   if (resumeBtn) {
     resumeBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      // friendly message for placeholder — user can replace href with actual PDF url
-      alert('Resume placeholder — replace the "#" link with your actual resume PDF file (upload to GitHub Pages folder and update href).');
+      // No alert needed because download works; keep for user feedback.
+      console.log('Resume download started');
     });
   }
 
-  // optional: add console info for projects links 
+  // Placeholder project links (update with actual URLs when available)
   const projectLinks = document.querySelectorAll('.project-link');
   projectLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       if (link.getAttribute('href') === '#') {
         e.preventDefault();
-        alert('Demo / repo link — you can update this with your live project URL.');
+        alert('Project details coming soon. For now, please contact me directly for more information.');
       }
     });
   });
-
-  const contactGit = document.querySelector('.contact-info a[href="#"]');
-  if (contactGit && contactGit.innerText.includes('github')) {
-    contactGit.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('GitHub link placeholder — update with your actual GitHub profile.');
-    });
-  }
-  const telegramLink = document.querySelector('.contact-info a[href="#"]:nth-of-type(2)');
-  if (telegramLink && telegramLink.innerText.includes('@riley.codes')) {
-    telegramLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('Telegram handle example — replace with your actual contact.');
-    });
-  }
 </script>
 </body>
 </html>
